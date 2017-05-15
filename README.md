@@ -14,3 +14,8 @@
 - JUnit5 http://junit.org/junit5/
 - SubEtha SMTP https://github.com/voodoodyne/subethasmtp
 - SubEtha SMTP Wiser https://github.com/voodoodyne/subethasmtp/blob/master/Wiser.md
+
+## Document
+- Freely available programming books https://github.com/vhf/free-programming-books
+- ThoughtWorkd TECHNOLOGY RADAR https://www.thoughtworks.com/radar/a-z
+- Chef Style DevOps Kung fu https://github.com/chef/devops-kungfu
