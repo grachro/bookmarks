@@ -16,6 +16,9 @@
 - SubEtha SMTP Wiser https://github.com/voodoodyne/subethasmtp/blob/master/Wiser.md
 
 ## Document
+- Manifesto for Agile Software Development http://agilemanifesto.org/
+- The Twelve-Factor App https://12factor.net/
+- The Twelve-Factor App https://12factor.net/ja/
 - Freely available programming books https://github.com/vhf/free-programming-books
 - ThoughtWorkd TECHNOLOGY RADAR https://www.thoughtworks.com/radar/a-z
 - Chef Style DevOps Kung fu https://github.com/chef/devops-kungfu
