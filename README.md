@@ -6,6 +6,7 @@
 ## Java
 - Gradle https://gradle.org/
 - Maven https://maven.apache.org/
+- Maven search http://search.maven.org/
 - Maven Repository Search https://mvnrepository.com/
 - SLF4J https://www.slf4j.org/
 - Logback https://logback.qos.ch/
