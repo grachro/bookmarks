@@ -40,11 +40,22 @@ $ vagrant up
 $ vagrant ssh
 ```
 
-## Vagrantで立ち上げたVMに、普通のsshでログイン
 
-### ディフォルト設定でsshログイン
+destroyコマンドで、VirtualBoxのVMを停止・削除できます。vm内での変更は破棄されます。
 
-SSH接続情報を確認
+```
+$ vagrant destroy
+```
+
+
+## Vagrantで立ち上げたVMにsshでログイン
+
+vagrant sshではなく、普通のsshでログインしてみます。
+
+
+### Vagrantのディフォルト設定でsshログイン
+
+ssh-configコマンドで、SSH接続情報を確認できます。
 ```
 $ vagrant ssh-config
 Host default
@@ -59,7 +70,7 @@ Host default
   LogLevel FATAL
 ```
 
-ディフォルトでは、ホストOSのport 2222に、VMのport 22がフォワードされています。選んだOSによってはUserがvagrant以外になっているかもしれません。sshでログインできます。
+ディフォルトでは、ホストOSのport 2222に、VMのport 22がフォワードされています。このため、localhostのport 2222に対してsshでログインできます。選んだOSによってはUserがvagrant以外になっているかもしれません。
 
 ```
 $ ssh -i /your/directory/centos7/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@127.0.0.1
@@ -73,9 +84,12 @@ su -でrootになる場合、パスワードはvagrantです。
 
 
 ### ポートを変えてsshログイン
-ディフォルトの設定のままだと、2台目のVMもport 2222にフォワードしようとして、起動に失敗するため、2223を割り振ってみます。
-initコマンドで作成されたVagrantfileをテキストエディタで開きます。
+ディフォルトの設定のままで2台目のVMを起動させると、port 2222にフォワードしようとして失敗するため、2223を割り振ってみます。
+新しい作業ディレクトリを作って、vagrant initコマンドを実行し、作成されたVagrantfileをテキストエディタで開きます。
 ```
+$ mk /your/another/centos7
+$ cd /your/another/centos7
+$ vagrant init
 $ vi Vagrantfile
 ```
 
@@ -83,6 +97,7 @@ Vagrantfileに１行追加
 ```
 config.vm.network "forwarded_port", guest: 22, host: 2223, id: "ssh"
 ```
+
 
 vagrant upで起動して、vagrant ssh-configで接続情報を確認すると、ポートが2223に変わっています。
 ```
@@ -94,11 +109,26 @@ Host default
 ```
 
 ```
-$ ssh -i /your/directory/centos7/.vagrant/machines/default/virtualbox/private_key -p 2223 vagrant@localhost
+$ ssh -i /your/another/centos7/.vagrant/machines/default/virtualbox/private_key -p 2223 vagrant@localhost
 ```
 
-## VirtualBoxのVMを停止・削除
+### VMのipを変えてsshログイン
+今度はVMにホストOSとは別の、IPアドレス割り振って、ホストOSからssh接続してみます。
+また新しい作業ディレクトリを作成して、init後、Vagrantfileに1行追加します。
 
 ```
-$ vagrant destroy
+$ mk /your/newip/centos7
+$ cd /your/newip/centos7
+$ vagrant init
+$ vi Vagrantfile
+```
+
+Vagrantfileに１行追加
+```
+config.vm.network "private_network", ip: "172.100.1.2"
+```
+
+通常のport 22でsshログインできるようになりました。
+```
+ssh -i /your/newip/centos7/.vagrant/machines/default/virtualbox/private_key vagrant@172.100.1.2
 ```
