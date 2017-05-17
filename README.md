@@ -27,3 +27,9 @@
 - Freely available programming books https://github.com/vhf/free-programming-books
 - ThoughtWorkd TECHNOLOGY RADAR https://www.thoughtworks.com/radar/a-z
 - Chef Style DevOps Kung fu https://github.com/chef/devops-kungfu
+
+## 学習サイト
+- ドットインストール https://dotinstall.com
+- udemy https://www.udemy.com/
+- Progate https://prog-8.com/
+ 
