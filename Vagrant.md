@@ -129,7 +129,7 @@ Vagrantfileに１行追加
 config.vm.network "private_network", ip: "172.100.1.2"
 ```
 
-通常のport 22でsshログインできるようになりました。
+VMに対してホストOS以外のIPにsshでログインできるようになりました。
 ```
 $ vagrant up
 $ ssh -i /your/directory/vm3/.vagrant/machines/default/virtualbox/private_key vagrant@172.100.1.2
