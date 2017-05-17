@@ -35,7 +35,7 @@ VirtualBoxにVMを起動
 $ vagrant up
 ```
 
-無事立ち上がったら、VMにvagrant sshでログインできます
+無事立ち上がったら、VMにvagrant sshでログインできます。ログアウトはexitです。
 ```
 $ vagrant ssh
 ```
@@ -59,20 +59,43 @@ Host default
   LogLevel FATAL
 ```
 
-ディフォルトでは、ホストOSのポート2222に、VMのポート22がフォワードされています。
+ディフォルトでは、ホストOSのport 2222に、VMのport 22がフォワードされています。選んだOSによってはUserがvagrant以外になっているかもしれません。sshでログインできます。
 
 ```
 $ ssh -i /your/directory/centos7/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@127.0.0.1
 とか
 $ ssh -i /your/directory/centos7/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@localhost
 
-...
-Are you sure you want to continue connecting (yes/no)? yes
 [vagrant@localhost ~]$ 
 ```
 
+su -でrootになる場合、パスワードはvagrantです。
 
 
+### ポートを変えてsshログイン
+ディフォルトの設定のままだと、2台目のVMもport 2222にフォワードしようとして、起動に失敗するため、2223を割り振ってみます。
+initコマンドで作成されたVagrantfileをテキストエディタで開きます。
+```
+$ vi Vagrantfile
+```
+
+Vagrantfileに１行追加
+```
+config.vm.network "forwarded_port", guest: 22, host: 2223, id: "ssh"
+```
+
+vagrant upで起動して、vagrant ssh-configで接続情報を確認すると、ポートが2223に変わっています。
+```
+Host default
+  HostName 127.0.0.1
+  User vagrant
+  Port 2223
+以下略
+```
+
+```
+$ ssh -i /your/directory/centos7/.vagrant/machines/default/virtualbox/private_key -p 2223 vagrant@localhost
+```
 
 ## VirtualBoxのVMを停止・削除
 
