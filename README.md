@@ -3,6 +3,10 @@
 ## Docker
 - Docker Hub https://hub.docker.com/
 
+## Vagrant
+- Vagrant https://www.vagrantup.com/
+- Boxes search https://atlas.hashicorp.com/boxes/search
+
 ## Java
 - Gradle https://gradle.org/
 - Maven https://maven.apache.org/
