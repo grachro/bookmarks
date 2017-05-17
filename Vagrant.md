@@ -96,8 +96,10 @@ config.vm.network "forwarded_port", guest: 22, host: 2223, id: "ssh"
 ```
 
 
-vagrant upで起動して、vagrant ssh-configで接続情報を確認すると、ポートが2223に変わっています。
+vagrant upでVMを起動して、vagrant ssh-configで接続情報を確認すると、ポートが2223に変わっています。
 ```
+$ vagrant up
+$ vagrant ssh-config
 Host default
   HostName 127.0.0.1
   User vagrant
@@ -105,8 +107,10 @@ Host default
 以下略
 ```
 
+port 2223でsshログインできます。
 ```
 $ ssh -i /your/directory/vm2/.vagrant/machines/default/virtualbox/private_key -p 2223 vagrant@localhost
+[vagrant@xxx ~]$ 
 ```
 
 ## VMのipを変えてsshログイン
@@ -127,5 +131,7 @@ config.vm.network "private_network", ip: "172.100.1.2"
 
 通常のport 22でsshログインできるようになりました。
 ```
-ssh -i /your/directory/vm3/.vagrant/machines/default/virtualbox/private_key vagrant@172.100.1.2
+$ vagrant up
+$ ssh -i /your/directory/vm3/.vagrant/machines/default/virtualbox/private_key vagrant@172.100.1.2
+[vagrant@xxx ~]$ 
 ```
