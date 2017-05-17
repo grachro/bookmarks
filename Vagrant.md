@@ -4,12 +4,12 @@
 ### VirtualBoxのインストール
 - VirtualBox https://www.virtualbox.org/
 
-インストールが終わったら起動してください。
+インストール後、起動してください。
 
 ### Vagrantのインストール
 - Vagrant https://www.vagrantup.com/
 
-インストールが終わったらvagrantコマンドが使えるようになります。
+インストール後、vagrantコマンドが使えるようになります。
 ```
 $ vagrant --version
 Vagrant 1.9.4
