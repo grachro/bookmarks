@@ -21,8 +21,8 @@ Vagrant 1.9.4
 今回の説明では、VMのOSにCentOS7を使います。他のOSを使う場合は[ここ](https://atlas.hashicorp.com/boxes/search)で探して下さい。
 
 ```
-$ mkdir -p /your/directory/centos7
-$ cd /your/directory/centos7
+$ mkdir -p /your/directory/vm1
+$ cd /your/directory/vm1
 ```
 
 initコマンドで初期化します。Vagrantfileが作成されます。
@@ -48,12 +48,9 @@ $ vagrant destroy
 ```
 
 
-## Vagrantで立ち上げたVMにsshでログイン
+## Vagrantで立ち上げたVMにディフォルト設定でsshでログイン
 
 vagrant sshではなく、普通のsshでログインしてみます。
-
-
-### Vagrantのディフォルト設定でsshログイン
 
 ssh-configコマンドで、SSH接続情報を確認できます。
 ```
@@ -65,7 +62,7 @@ Host default
   UserKnownHostsFile /dev/null
   StrictHostKeyChecking no
   PasswordAuthentication no
-  IdentityFile /your/directory/centos7/.vagrant/machines/default/virtualbox/private_key
+  IdentityFile /your/directory/vm1/.vagrant/machines/default/virtualbox/private_key
   IdentitiesOnly yes
   LogLevel FATAL
 ```
@@ -73,9 +70,9 @@ Host default
 ディフォルトでは、ホストOSのport 2222に、VMのport 22がフォワードされています。このため、localhostのport 2222に対してsshでログインできます。選んだOSによってはUserがvagrant以外になっているかもしれません。
 
 ```
-$ ssh -i /your/directory/centos7/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@127.0.0.1
+$ ssh -i /your/directory/vm1/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@127.0.0.1
 とか
-$ ssh -i /your/directory/centos7/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@localhost
+$ ssh -i /your/directory/vm1/.vagrant/machines/default/virtualbox/private_key -p 2222 vagrant@localhost
 
 [vagrant@localhost ~]$ 
 ```
@@ -83,13 +80,13 @@ $ ssh -i /your/directory/centos7/.vagrant/machines/default/virtualbox/private_ke
 su -でrootになる場合、パスワードはvagrantです。
 
 
-### ポートを変えてsshログイン
+## VMに接続するポートを変えてsshログイン
 ディフォルトの設定のままで2台目のVMを起動させると、port 2222にフォワードしようとして失敗するため、2223を割り振ってみます。
 新しい作業ディレクトリを作って、vagrant initコマンドを実行し、作成されたVagrantfileをテキストエディタで開きます。
 ```
-$ mk /your/another/centos7
-$ cd /your/another/centos7
-$ vagrant init
+$ mk /your/directory/vm2
+$ cd /your/directory/vm2
+$ vagrant init centos/7
 $ vi Vagrantfile
 ```
 
@@ -109,17 +106,17 @@ Host default
 ```
 
 ```
-$ ssh -i /your/another/centos7/.vagrant/machines/default/virtualbox/private_key -p 2223 vagrant@localhost
+$ ssh -i /your/directory/vm2/.vagrant/machines/default/virtualbox/private_key -p 2223 vagrant@localhost
 ```
 
-### VMのipを変えてsshログイン
+## VMのipを変えてsshログイン
 今度はVMにホストOSとは別の、IPアドレス割り振って、ホストOSからssh接続してみます。
 また新しい作業ディレクトリを作成して、init後、Vagrantfileに1行追加します。
 
 ```
-$ mk /your/newip/centos7
-$ cd /your/newip/centos7
-$ vagrant init
+$ mk /your/directory/vm3
+& cd /your/directory/vm3
+$ vagrant init centos/7
 $ vi Vagrantfile
 ```
 
@@ -130,5 +127,5 @@ config.vm.network "private_network", ip: "172.100.1.2"
 
 通常のport 22でsshログインできるようになりました。
 ```
-ssh -i /your/newip/centos7/.vagrant/machines/default/virtualbox/private_key vagrant@172.100.1.2
+ssh -i /your/directory/vm3/.vagrant/machines/default/virtualbox/private_key vagrant@172.100.1.2
 ```
