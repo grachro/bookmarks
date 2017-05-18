@@ -1,5 +1,5 @@
 
-## 事前準備
+## インストール
 
 ### VirtualBoxのインストール
 - VirtualBox https://www.virtualbox.org/
@@ -14,6 +14,8 @@
 $ vagrant --version
 Vagrant 1.9.4
 ```
+
+
 
 ## Vagrantプロジェクトの初期化からVM起動まで
 
@@ -134,4 +136,25 @@ VMに対してホストOS以外のIPにsshでログインできるようにな�
 $ vagrant up
 $ ssh -i /your/directory/vm3/.vagrant/machines/default/virtualbox/private_key vagrant@172.100.1.2
 [vagrant@xxx ~]$ 
+```
+
+
+## 複数VM起動
+
+https://www.vagrantup.com/docs/multi-machine/index.html
+
+```
+Vagrant.configure("2") do |config|
+  config.vm.provision "shell", inline: "echo Hello"
+
+  config.vm.define "web" do |web|
+    web.vm.box = "apache"
+    db.vm.network :private_network, ip: "xxx.xxx.xxx.xxx"
+  end
+
+  config.vm.define "db" do |db|
+    db.vm.box = "mysql"
+    db.vm.network :private_network, ip: "xxx.xxx.xxx.xxx"
+  end
+end
 ```
