@@ -19,3 +19,6 @@ $ ssh-keygen -t rsa
 ```
 $ ssh-copy-id xxx.xxx.xxx.xxx
 ```
+
+## tar/zipコマンドで解凍・圧縮一覧まとめ（gz、zip、tar.xzなど）
+http://uguisu.skr.jp/Windows/tar.html
