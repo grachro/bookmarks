@@ -4,3 +4,7 @@ http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-project-maven.h
 
 ## Using the SDK with Gradle
 http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-project-gradle.html
+
+
+## 最新バージョン
+https://github.com/aws/aws-sdk-java
