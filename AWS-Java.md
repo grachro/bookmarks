@@ -8,3 +8,6 @@ http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-project-gradle.
 
 ## 最新バージョン
 https://github.com/aws/aws-sdk-java
+
+## Set up AWS Credentials and Region for Development
+http://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/setup-credentials.html
