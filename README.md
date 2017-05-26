@@ -21,7 +21,7 @@
 - SubEtha SMTP https://github.com/voodoodyne/subethasmtp
 - SubEtha SMTP Wiser https://github.com/voodoodyne/subethasmtp/blob/master/Wiser.md
 
-## JavaScript
+## CSS framework
 - Bootstrap http://getbootstrap.com/
 
 
