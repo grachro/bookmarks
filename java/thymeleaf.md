@@ -54,10 +54,14 @@ http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#escaped-element-a
 [/]
 ```
 
+公式チュートリアル http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#textual-syntax
+
+
 ### コメント
 ```
 /*[- This code will be removed at Thymeleaf parsing time! -]*/
 ```
-- 3.3 Textual prototype-only comment blocks: adding code http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#textual-prototype-only-comment-blocks-adding-code
+公式チュートリアル http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#textual-prototype-only-comment-blocks-adding-code
+
 - https://github.com/thymeleaf/thymeleaf/issues/395
 
