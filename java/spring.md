@@ -1,0 +1,6 @@
+## memo
+
+### キャッシュ
+
+- Cache Abstraction http://docs.spring.io/spring/docs/current/spring-framework-reference/html/cache.html
+
