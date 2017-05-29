@@ -1,11 +1,15 @@
-## insert
+### 変数表示
+
+```
+[(${変数})]
+```
+
+### 別のテンプレートファイルをinsert
 
 Thymeleaf 3.0 Tutorial
 http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
 
-
-
-### ファイル名を動的に
+#### insertするファイル名を動的に変える
 
 ```
 [# th:insert='sub/Foo__${varNumber}__.html'/]
@@ -40,6 +44,13 @@ http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#escaped-element-a
   [# th:case="1"]foo[/]
   [# th:case="2"]bar[/]
   [# th:case="3"]baz[/]
+[/]
+```
+### loop
+
+```
+[# th:each="item : ${itemList}"]
+  this is loop block [(${item.name})]
 [/]
 ```
 
