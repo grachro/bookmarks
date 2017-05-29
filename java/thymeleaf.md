@@ -22,3 +22,23 @@ http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
 ```
 
 http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#numbers
+
+
+### if
+
+```
+[# th:if="${param}==false"]
+param is false
+[/]
+```
+http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#escaped-element-attributes
+
+### switch
+
+```
+[# th:switch="${param}"]
+  [# th:case="1"]foo[/]
+  [# th:case="2"]bar[/]
+  [# th:case="3"]baz[/]
+[/]
+```
