@@ -42,3 +42,11 @@ http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#escaped-element-a
   [# th:case="3"]baz[/]
 [/]
 ```
+
+### コメント
+```
+/*[- This code will be removed at Thymeleaf parsing time! -]*/
+```
+- 3.3 Textual prototype-only comment blocks: adding code http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#textual-prototype-only-comment-blocks-adding-code
+- https://github.com/thymeleaf/thymeleaf/issues/395
+
