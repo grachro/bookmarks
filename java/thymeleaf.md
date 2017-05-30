@@ -6,8 +6,11 @@
 
 ### 別のテンプレートファイルをinsert
 
-Thymeleaf 3.0 Tutorial
-http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
+```
+[# th:insert="target/file/path"/]
+```
+
+Thymeleaf 3.0 Tutorial http://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html
 
 #### insertするファイル名を動的に変える
 
