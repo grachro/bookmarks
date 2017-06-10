@@ -25,6 +25,12 @@ docker run -it --rm elixir /bin/bash
 ```
 docker images
 ```
+## rm
+
+停止したすべてのコンテナを削除(rmコマンド)
+```
+docker rm -f $(docker ps -aq -f status=exited)
+```
 
 ## rmi
 
