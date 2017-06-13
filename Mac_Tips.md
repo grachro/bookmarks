@@ -45,5 +45,9 @@ sudo du -h -x -d 1 /your/directory
 ## ファイルを一括削除
 
 ```
+mac
 find . -type f -print0 | xargs -0 rm
+
+linux
+find . -type f -print | xargs rm
 ```
