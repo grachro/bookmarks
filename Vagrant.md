@@ -151,9 +151,6 @@ cat /proc/swaps
 unzip oracle-xe-11.2.0-1.0.x86_64.rpm.zip 
 sudo rpm -ivh Disk1/oracle-xe-11.2.0-1.0.x86_64.rpm
 
-sudo /etc/init.d/oracle-xe configure
-
-
 #リターン（ディフォルト8080）
 #リターン（ディフォルト1521）
 #pw
@@ -162,7 +159,7 @@ sudo /etc/init.d/oracle-xe configure
 #リターン
 #y
 #リターン
-sudo printf \\n\\n\\npw\\npw\\ny\\n | /etc/init.d/oracle-xe configure
+printf \\n\\n\\npw\\npw\\ny\\n | sudo /etc/init.d/oracle-xe configure
 sudo /etc/init.d/oracle-xe start
 
 sudo su - oracle
