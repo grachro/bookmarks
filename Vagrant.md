@@ -142,6 +142,7 @@ sudo yum install -y vim \
 
 sudo su -
 dd if=/dev/zero of=/swap bs=1024 count=1048576
+chmod 0600 /swap
 mkswap /swap
 swapon /swap
 cat /proc/swaps
