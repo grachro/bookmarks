@@ -18,6 +18,7 @@
 - SLF4J https://www.slf4j.org/
 - Logback https://logback.qos.ch/
 - Spark - A micro framework http://sparkjava.com/
+- Lombok https://projectlombok.org/
 
 ## Java Test
 - JUnit5 http://junit.org/junit5/
