@@ -35,7 +35,7 @@
 - The Twelve-Factor App https://12factor.net/
 - The Twelve-Factor App https://12factor.net/ja/
 - Freely available programming books https://github.com/vhf/free-programming-books
-- ThoughtWorkd TECHNOLOGY RADAR https://www.thoughtworks.com/radar/a-z
+- ThoughtWorkd TECHNOLOGY RADAR https://www.thoughtworks.com/radar/a-z (Adopt > Trial > Assess > Hold)
 - Chef Style DevOps Kung fu https://github.com/chef/devops-kungfu
 - The Reactive Manifesto http://www.reactivemanifesto.org/
 - リアクティブ宣言 http://www.reactivemanifesto.org/ja
