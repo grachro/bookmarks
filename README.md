@@ -8,8 +8,8 @@
 - Boxes search https://atlas.hashicorp.com/boxes/search
 
 ## Github
-- Mastering Markdown https://guides.github.com/features/mastering-markdown/
-
+- Mastering Markdown(GFM GitHub Flavored Markdown) https://guides.github.com/features/mastering-markdown/
+                     
 ## Java
 - Gradle https://gradle.org/
 - Maven https://maven.apache.org/
