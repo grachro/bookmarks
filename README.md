@@ -50,4 +50,5 @@
 - udemy https://www.udemy.com/
 - Progate https://prog-8.com/
 - Google のデジタル ワークショップ https://learndigital.withgoogle.com/digitalworkshop-jp
+- AWS Training and Certification Portal https://www.aws.training/
 
