@@ -66,3 +66,12 @@ ls -ltrh /var/lib/docker/volumes
 control+a k
 
 ```
+
+
+## exec
+
+稼働中のコンテナに入る
+
+```
+docker exec -it [CONTAINER] /bin/bash
+```
