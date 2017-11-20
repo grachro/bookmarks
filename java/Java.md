@@ -20,3 +20,13 @@ List<String> list = new ArrayList<>();
 Map<String, Long> counted = list.stream()
     .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 ```
+
+## CompletableFuture.runAsync
+
+### ブロック内のスレッド
+
+```
+CompletableFuture.runAsync(() -> {
+    #この中は外とスレッドが変わる
+}, AsyncSenderPool.get());
+```
