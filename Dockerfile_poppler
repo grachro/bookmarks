@@ -1,0 +1,10 @@
+#==BUILD==
+#docker build -t my-poppler .
+#
+#==RUN==
+#docker run -it --rm -v $(pwd):/mydata my-poppler /bin/bash
+#pdftotext original-pdf-file output-text-file
+
+FROM centos:7
+
+RUN yum install -y  poppler poppler-utils
