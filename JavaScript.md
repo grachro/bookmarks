@@ -36,4 +36,9 @@
 ## Cytoscape.js
 * https://github.com/cytoscape/cytoscape.js
 * star 5,001
-Graph theory (network) library for visualisation and analysis
+* Graph theory (network) library for visualisation and analysis
+
+## datamaps
+* https://github.com/markmarkoh/datamaps
+* star 2,998
+* Customizable SVG map visualizations for the web in a single Javascript file using D3.js
