@@ -32,3 +32,8 @@
 * https://github.com/DmitryBaranovskiy/raphael/
 * star 9,990
 * JavaScript Vector Library
+
+## Cytoscape.js
+* https://github.com/cytoscape/cytoscape.js
+* star 5,001
+Graph theory (network) library for visualisation and analysis
