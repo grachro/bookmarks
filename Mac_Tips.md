@@ -67,3 +67,9 @@ find . -type f -print0 | xargs -0 rm
 linux
 find . -type f -print | xargs rm
 ```
+
+### バイナリファイルを探す
+
+```
+find . -type f -print0 | xargs -0 file | grep -v text 
+```
