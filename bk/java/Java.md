@@ -1,4 +1,12 @@
 
+## Mac
+
+一覧
+```
+/usr/libexec/java_home -V
+```
+
+
 ## スレッドダンプ
 
 ```
