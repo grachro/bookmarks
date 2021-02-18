@@ -17,3 +17,10 @@ https://help.github.com/articles/duplicating-a-repository/
 ```
 git svn clone http:/[svnpath] -T trunk
 ```
+
+
+## file log
+```
+# "%x09" is tab
+git log --pretty='format:%h%x09%cd%x09%s%x09%d%x09[%an]' --date=iso パス
+```
