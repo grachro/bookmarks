@@ -3,6 +3,12 @@ Docker Hub https://hub.docker.com/
 
 ## run
 
+
+### run nginx
+```
+docker run --rm -p 80:80 -v $(pwd):/usr/share/nginx/html:ro nginx
+```
+
 ### run CentOS
 ```
 docker run -it --rm centos:7
